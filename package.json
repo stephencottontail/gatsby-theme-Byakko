@@ -1,0 +1,14 @@
+{
+  "name": "gatsby-theme-byakko",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn workspace site run gatsby develop",
+    "build": "yarn workspace site run gatsby build"
+  },
+  "repository": "git@github.com:stephencottontail/gatsby-theme-byakko.git",
+  "author": "Stephen Dickinson <stephencottontail@me.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [ "site", "packages/*" ]
+}
