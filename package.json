@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "yarn workspace site run gatsby develop",
-    "build": "yarn workspace site run gatsby build"
+    "build": "yarn workspace site run gatsby build",
+    "postinstall": "npx babel node_modules/gatsby-plugin-image/gatsby-browser.js --out-file=node_modules/gatsby-plugin-image/gatsby-browser.js --presets=@babel/preset-react"
   },
   "repository": "git@github.com:stephencottontail/gatsby-theme-byakko.git",
   "author": "Stephen Dickinson <stephencottontail@me.com>",
