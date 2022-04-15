@@ -1,13 +1,17 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
-const Index = (props) => {
-	const { data } = props;
+type DataProps = {
+	wpPost: {
+		blocks: Array<{ saveContent: string }>;
+	};
+};
 
+const Index = ({ data: { wpPost } }: PageProps<DataProps>) => {
 	return (
 		<div>
-			{data.wpPost?.blocks &&
-				data.wpPost.blocks.map((el, idx) => (
+			{wpPost.blocks &&
+				wpPost.blocks.map((el, idx) => (
 					<div
 						key={idx}
 						dangerouslySetInnerHTML={{
