@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "clean": "yarn workspace site run gatsby clean",
     "start": "yarn workspace site run gatsby develop",
     "build": "yarn workspace site run gatsby build",
     "postinstall": "npx babel node_modules/gatsby-plugin-image/gatsby-browser.js --out-file=node_modules/gatsby-plugin-image/gatsby-browser.js --presets=@babel/preset-react"
