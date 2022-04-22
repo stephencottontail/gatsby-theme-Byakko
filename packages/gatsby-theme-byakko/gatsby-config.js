@@ -5,7 +5,8 @@ module.exports = ({ wpUrl }) => ({
 			options: {
 				url: wpUrl,
 				html: {
-					useGatsbyImage: false,
+					useGatsbyImage: true,
+					placeholderType: "tracedSVG",
 				},
 			},
 		},

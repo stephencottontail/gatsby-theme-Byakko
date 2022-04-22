@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
+import ComponentParser from "../components/ComponentParser";
 
 type DataProps = {
 	wpPost: {
@@ -11,14 +12,9 @@ const Index = ({ data: { wpPost } }: PageProps<DataProps>) => {
 	return (
 		<div>
 			{wpPost.blocks &&
-				wpPost.blocks.map((el, idx) => (
-					<div
-						key={idx}
-						dangerouslySetInnerHTML={{
-							__html: el.saveContent,
-						}}
-					/>
-				))}
+				wpPost.blocks.map((el, idx) => {
+					return <ComponentParser key={idx} block={el} />;
+				})}
 		</div>
 	);
 };
@@ -33,18 +29,6 @@ export const query = graphql`
 				saveContent
 				... on WpCoreImageBlock {
 					attributesJSON
-				}
-			}
-			featuredImage {
-				node {
-					localFile {
-						childImageSharp {
-							fluid {
-								src
-								sizes
-							}
-						}
-					}
 				}
 			}
 		}
