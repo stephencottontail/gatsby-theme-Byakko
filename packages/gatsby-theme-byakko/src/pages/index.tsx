@@ -1,14 +1,10 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
+
+import { PostProps } from "../types/Post";
 import ComponentParser from "../components/ComponentParser";
 
-type DataProps = {
-	wpPost: {
-		blocks: Array<{ saveContent: string }>;
-	};
-};
-
-const Index = ({ data: { wpPost } }: PageProps<DataProps>) => {
+const Index = ({ data: { wpPost } }: PageProps<PostProps>) => {
 	return (
 		<div>
 			{wpPost.blocks &&
